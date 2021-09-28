@@ -10,9 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GammaPrint">
         <activity
-            android:name=".NavigationActivity"
+            android:name=".BottomNavigation"
             android:exported="true"
-            android:label="@string/title_activity_navigation" />
+            android:label="@string/title_activity_bottom_navigation" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
