@@ -7,6 +7,14 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include
+            android:id="@+id/main_page_toolbar"
+            layout="@layout/app_tool_bar" />
+    </com.google.android.material.appbar.AppBarLayout>
+
     <TextView
         android:id="@+id/navigation_title"
         android:layout_width="wrap_content"
@@ -20,13 +28,8 @@
         android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/purple_700"
         android:layout_alignParentBottom="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
+        android:background="@drawable/app_bottom_corner"
         app:menu="@menu/bottom_nav_menu" />
 
 </RelativeLayout>

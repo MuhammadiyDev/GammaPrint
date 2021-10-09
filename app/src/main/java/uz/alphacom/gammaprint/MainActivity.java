@@ -2,10 +2,11 @@ package uz.alphacom.gammaprint;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView navigationTitle;
     BottomNavigationView bottomNavigationView;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         navigationTitle = (TextView)findViewById(R.id.navigation_title);
+        toolbar = (Toolbar) findViewById(R.id.main_page_toolbar);
+
+        toolbar.setTitle("Gamma Shop");
 
         bottomNavigationView = (BottomNavigationView)findViewById(R.id.nav_view);
 
@@ -33,23 +38,26 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.navigation_home:
                         navigationTitle.setText("Home");
                         break;
-                    case R.id.navigation_dashboard:
-                        navigationTitle.setText("Dashboard");
+                    case R.id.navigation_categories:
+                        navigationTitle.setText("Categories");
                         break;
-                    case R.id.navigation_search:
-                        navigationTitle.setText("Search");
-                        break;
-                    case R.id.navigation_notifications:
-                        navigationTitle.setText("Notifications");
+                    case R.id.navigation_news:
+                        navigationTitle.setText("News");
                         break;
                     case R.id.navigation_account:
                         navigationTitle.setText("Account");
                         break;
                 }
-                return false;
+                return true;
             }
         });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.app_bar_menu, menu);
+        return true;
     }
 
     @Override
